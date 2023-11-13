@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Jakob Hoeg",
   description: "Portfolio",
   icons: {
-    icon: "/favicon-32x32.png",
+    icon: "/favicon-32x32.png"
   }
 };
 
