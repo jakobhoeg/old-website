@@ -58,3 +58,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.scrollable-content {
+  max-height: 85vh; 
+  overflow-y: auto;
+}
