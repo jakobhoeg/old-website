@@ -83,6 +83,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: white;
+  transition: transform 0.05s ease;
 }
 
 a {
@@ -92,4 +93,8 @@ a {
 
 button {
   cursor: none;
+}
+
+.custom-cursor.hidden {
+  transform: translate(-50%, -50%) scale(0);
 }

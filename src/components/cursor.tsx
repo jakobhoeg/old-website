@@ -40,7 +40,7 @@ export default function Cursor() {
   }, [isHovered]);
 
   return (
-    <div id="custom-cursor" className="custom-cursor">
+    <div id="custom-cursor" className="custom-cursor hidden">
     </div>
   );
 }
