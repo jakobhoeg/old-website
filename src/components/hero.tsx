@@ -1,8 +1,28 @@
-import React from "react";
+'use client'
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
+import debounce from "lodash/debounce";
+
 
 export default function Hero() {
+  const [showArrowButton, setShowArrowButton] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      const scrollThreshold = 80;
+      setShowArrowButton(window.scrollY < scrollThreshold);
+    }, 100);
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
+
   return (
     <section className="w-full ">
       <div className="flex flex-col items-center justify-center w-full h-full gap-6">
@@ -15,11 +35,17 @@ export default function Hero() {
         </h2>
         <Button className="rounded-full">Get in touch</Button>
       </div>
-      <div className=" flex w-full items-center justify-center mt-28">
-        <Button size="icon" variant="ghost" className=" rounded-full animate-bounce">
-          <ArrowDownIcon className=" w-5 h-5 mx-auto text-muted-foreground" />
-        </Button>
-      </div>
+      {showArrowButton && (
+        <div className="flex w-full items-center justify-center mt-28">
+          <Button
+            size="icon"
+            variant="ghost"
+            className="rounded-full animate-bounce"
+          >
+            <ArrowDownIcon className="w-5 h-5 mx-auto text-muted-foreground" />
+          </Button>
+        </div>
+      )}
     </section>
   );
 }
