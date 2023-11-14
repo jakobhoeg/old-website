@@ -1,4 +1,3 @@
-
 import Cursor from "@/components/cursor";
 import Hero from "@/components/hero";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -7,8 +6,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main 
-    className="relative flex flex-col w-full min-h-screen">
+    <main className="relative flex flex-col w-full min-h-screen">
       <Cursor />
       <Navbar />
       <div className="scrollable-content -mt-20 flex flex-col justify-center items-center h-screen">
@@ -17,7 +15,6 @@ export default function Home() {
       <div className="scrollable-content flex flex-col justify-center items-center h-screen">
         DAMNS
       </div>
-       
     </main>
   );
 }

@@ -41,7 +41,6 @@ export default function Cursor() {
 
   return (
     <div id="custom-cursor" className="custom-cursor">
-      <span className="cursor-text">GG</span>
     </div>
   );
 }
