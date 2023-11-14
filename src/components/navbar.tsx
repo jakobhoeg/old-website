@@ -50,6 +50,7 @@ export default function Navbar() {
 function NavbarFixed() {
   return (
     <nav className="text-sm z-10 flex justify-between items-center w-full px-28 py-6 top-4">
+      <Link href="/">
       <Image
         src="/logo.svg"
         alt="logo"
@@ -57,6 +58,7 @@ function NavbarFixed() {
         height={38}
         className="dark:invert"
       />
+      </Link>
       <ul className="flex items-center/50 items-center space-x-4 mx-auto">
         <Button size="sm" className="rounded-full">
           Get in touch
