@@ -11,7 +11,7 @@ export default function Home() {
       autoPlay
       muted
       loop
-      className="hidden dark:inline-block absolute top-0 left-0 w-full h-full opacity-10 repeat-0 object-cover z-0"
+      className="hidden dark:inline-block absolute top-0 left-0 w-full h-full opacity-5 repeat-0 object-cover z-0"
       src="https://utfs.io/f/954c88aa-b3a0-4f34-8abf-f28a0e8b3bac-pqmaey.mp4"></video>
       <Cursor />
       <Navbar />
