@@ -15,7 +15,7 @@ export default function Hero() {
         </h2>
         <Button className="rounded-full">Get in touch</Button>
       </div>
-      <div className=" flex w-full items-center justify-center absolute bottom-10">
+      <div className=" flex w-full items-center justify-center mt-28">
         <Button size="icon" variant="ghost" className=" rounded-full animate-bounce">
           <ArrowDownIcon className=" w-5 h-5 mx-auto text-muted-foreground" />
         </Button>

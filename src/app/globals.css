@@ -61,8 +61,7 @@
 
 
 .scrollable-content {
-  max-height: 85vh; 
-  overflow-y: auto;
+  max-height: 100vh; 
 }
 
 body {
