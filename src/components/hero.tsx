@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
-import { ArrowDownIcon } from "@radix-ui/react-icons";
+import { ArrowDownIcon, RocketIcon } from "@radix-ui/react-icons";
 import debounce from "lodash/debounce";
 import { useHover } from "@/lib/hover-context";
 import { AnimatePresence, motion } from "framer-motion";
+
 
 export default function Hero() {
   const [showArrowButton, setShowArrowButton] = useState(true);
@@ -49,7 +50,7 @@ export default function Hero() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1, // Change the duration to your desired value
+        duration: 1,
       },
     },
   };
@@ -63,6 +64,9 @@ export default function Hero() {
       animate="visible"
       className="flex flex-col items-center justify-center w-full h-full gap-6"
     >
+      
+       
+     
       <motion.h1
         variants={itemVariants}
         className="text-center text-7xl max-w-5xl font-bold"
@@ -80,11 +84,13 @@ export default function Hero() {
       variants={itemVariants}
       >
       <Button
+      size="lg"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        className="rounded-full"
+        className="rounded-full gap-2"
       >
-        Get in touch
+        <p>Get in touch</p>
+        <RocketIcon className="w-4 h-4"/>
       </Button>
 
       </motion.div>

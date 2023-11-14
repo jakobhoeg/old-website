@@ -18,13 +18,8 @@ export default function Navbar() {
   const [isScrolling, setIsScrolling] = useState(false);
 
   const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY >= 120 && !isScrolling) {
-      setIsScrolling(true);
-    } else if (currentScrollY < 80 && isScrolling) {
-      setIsScrolling(false);
-    }
+    const scrollThreshold = 40;
+    setIsScrolling(window.scrollY > scrollThreshold);
   };
 
   useEffect(() => {
@@ -37,11 +32,11 @@ export default function Navbar() {
   return (
     <>
       <AnimatePresence>
-        {isScrolling ? (
+      <NavbarFixed />
+        {isScrolling && (
           <NavbarScroll isScrolling={isScrolling} />
-        ) : (
-          <NavbarFixed />
-        )}
+        ) 
+      }
       </AnimatePresence>
     </>
   );
