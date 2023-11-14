@@ -108,7 +108,7 @@ export default function Hero() {
               onMouseLeave={handleMouseLeave}
               size="icon"
               variant="ghost"
-              className="absolute rounded-full animate-bounce bottom-28"
+              className="absolute rounded-full animate-bounce bottom-24"
             >
               <ArrowDownIcon className="w-5 h-5 mx-auto text-muted-foreground" />
             </Button>
