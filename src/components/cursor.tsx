@@ -2,13 +2,18 @@
 
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
-import { Console } from "console";
+import { useHover } from "@/lib/hover-context";
 
 export default function Cursor() {
+  const { isHovered } = useHover();
+
   useEffect(() => {
     const cursor = document.getElementById("custom-cursor");
-    const links = document.querySelectorAll("a");
-    const buttons = document.querySelectorAll("button");
+
+    if (!cursor) {
+      console.error("Cursor element not found.");
+      return;
+    }
 
     const onMouseMove = (e: MouseEvent) => {
       const { clientX, clientY } = e;
@@ -19,58 +24,20 @@ export default function Cursor() {
       });
     };
 
-    const onMouseEnterLink = (e: MouseEvent) => {
-      const link = e.target as HTMLAnchorElement;
-        gsap.to(cursor, {
-          scale: 4,
-        });
-      
-    };
+    const scale = isHovered ? 4 : 1;
 
-    const onMouseLeaveLink = (e: MouseEvent) => {
-      gsap.to(cursor, {
-        scale: 1,
-      });
-    };
+    gsap.to(cursor, {
+      scale,
+      duration: 0.3,
+      ease: "power2.out",
+    });
 
     document.addEventListener("mousemove", onMouseMove);
 
-    links.forEach((link) => {
-      link.addEventListener("mouseenter", onMouseEnterLink);
-      link.addEventListener("mouseleave", onMouseLeaveLink);
-    });
-
-    const onMouseEnterButton = (e: MouseEvent) => {
-        const button = e.target as HTMLButtonElement;
-        gsap.to(cursor, {
-            scale: 4,
-        });
-       
-    }
-
-    const onMouseLeaveButton = (e: MouseEvent) => {
-        gsap.to(cursor, {
-            scale: 1,
-        });
-        }
-
-    buttons.forEach((button) => {
-        button.addEventListener("mouseenter", onMouseEnterButton);
-        button.addEventListener("mouseleave", onMouseLeaveButton);
-    });
-
     return () => {
       document.removeEventListener("mousemove", onMouseMove);
-      links.forEach((link) => {
-        link.removeEventListener("mouseenter", onMouseEnterLink);
-        link.removeEventListener("mouseleave", onMouseLeaveLink);
-      });
-        buttons.forEach((button) => {
-            button.removeEventListener("mouseenter", onMouseEnterButton);
-            button.removeEventListener("mouseleave", onMouseLeaveButton);
-        });
     };
-  }, []);
+  }, [isHovered]);
 
   return (
     <div id="custom-cursor" className="custom-cursor">

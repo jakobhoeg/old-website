@@ -1,12 +1,21 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { ArrowDownIcon } from "@radix-ui/react-icons";
 import debounce from "lodash/debounce";
-
+import { useHover } from "@/lib/hover-context";
 
 export default function Hero() {
   const [showArrowButton, setShowArrowButton] = useState(true);
+  const { setHovered } = useHover();
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
 
   useEffect(() => {
     const handleScroll = debounce(() => {
@@ -21,8 +30,6 @@ export default function Hero() {
     };
   }, []);
 
-
-
   return (
     <section className="w-full ">
       <div className="flex flex-col items-center justify-center w-full h-full gap-6">
@@ -33,11 +40,19 @@ export default function Hero() {
           Trying to create cool stuff <br />
           since 1995.
         </h2>
-        <Button className="rounded-full">Get in touch</Button>
+        <Button
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="rounded-full"
+        >
+          Get in touch
+        </Button>
       </div>
       {showArrowButton && (
         <div className="flex w-full items-center justify-center mt-28">
           <Button
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
             size="icon"
             variant="ghost"
             className="rounded-full animate-bounce"

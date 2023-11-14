@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { HoverProvider } from "@/lib/hover-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
+       <HoverProvider>
+       <ThemeProvider attribute="class" defaultTheme="dark">
           {children}
         </ThemeProvider>
+       </HoverProvider>
       </body>
     </html>
   );
