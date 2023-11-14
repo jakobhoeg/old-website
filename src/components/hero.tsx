@@ -62,10 +62,16 @@ export default function Hero() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="flex flex-col items-center justify-center w-full h-full gap-6"
+      className="relative flex flex-col items-center justify-center w-full min-h-screen gap-6"
     >
-      
-       
+      <video
+        autoPlay
+        muted
+        loop
+        className="hidden dark:inline-block absolute top-0 left-0 w-full h-screen opacity-10 repeat-0 object-cover"
+        src="https://utfs.io/f/050a2f08-ccc6-40b5-8318-e782e7af467c-kyineo.mp4"
+      ></video>
+      <div className="hidden dark:inline-block absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-background to-transparent"></div>   
      
       <motion.h1
         variants={itemVariants}
