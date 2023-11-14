@@ -97,7 +97,7 @@ export default function Hero() {
     </motion.div>
         {showArrowButton && (
           <motion.div
-            className="flex w-full items-center justify-center mt-28"
+            className="relative flex w-full h-full items-center justify-center"
             key="arrow-button"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -108,7 +108,7 @@ export default function Hero() {
               onMouseLeave={handleMouseLeave}
               size="icon"
               variant="ghost"
-              className="rounded-full animate-bounce"
+              className="absolute rounded-full animate-bounce bottom-28"
             >
               <ArrowDownIcon className="w-5 h-5 mx-auto text-muted-foreground" />
             </Button>
