@@ -61,7 +61,7 @@ function NavbarFixed() {
           alt="logo"
           width={38}
           height={38}
-          className="dark:invert cursor-hover"
+          className="dark:invert cursor-hover flex flex-shrink-0"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         />

@@ -86,6 +86,20 @@ body {
   transition: transform 0.05s ease;
 }
 
+.custom-cursor.hidden {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+@media (max-width: 620px) {
+  body {
+    cursor: auto;
+  }
+
+  .custom-cursor {
+    display: none;
+  }
+}
+
 a {
   text-decoration: none;
   cursor: none;
@@ -95,9 +109,6 @@ button {
   cursor: none;
 }
 
-.custom-cursor.hidden {
-  transform: translate(-50%, -50%) scale(0);
-}
 
 .gradient {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
@@ -108,3 +119,12 @@ html, body {
 }
 
 
+
+
+.shake {
+  transition: transform 0.3s ease-in-out;
+}
+
+.shake:hover {
+  transform: scale(1.1);
+}
