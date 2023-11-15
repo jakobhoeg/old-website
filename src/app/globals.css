@@ -121,10 +121,3 @@ html, body {
 
 
 
-.shake {
-  transition: transform 0.3s ease-in-out;
-}
-
-.shake:hover {
-  transform: scale(1.1);
-}

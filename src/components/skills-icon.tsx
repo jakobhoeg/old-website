@@ -1,14 +1,14 @@
 import { useHover } from '@/lib/hover-context';
+import { motion } from 'framer-motion';
 import Image from 'next/image'
 import React from 'react'
 
 interface Props {
     imageSrc: string;
-    className?: React.ReactNode;
     }
 
 
-export default function SkillsIcon({ imageSrc, className }: Props) {
+export default function SkillsIcon({ imageSrc }: Props) {
     const { setHovered } = useHover();
 
   const handleMouseEnter = () => {
@@ -20,6 +20,10 @@ export default function SkillsIcon({ imageSrc, className }: Props) {
   };
 
   return (
+    <motion.div
+    whileHover={{ scale: 1.3, rotate: 4, transition: { duration: 0.2 } }}
+    >
+
     <Image
     onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -30,5 +34,6 @@ export default function SkillsIcon({ imageSrc, className }: Props) {
             className="shake shake:hover dark:invert"
     >
     </Image>
+    </motion.div>
     )
 }
