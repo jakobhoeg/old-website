@@ -99,16 +99,14 @@ export default function Hero() {
         <RocketIcon className="w-4 h-4"/>
       </Button>
       </motion.div>
-    </motion.div>
     {showArrowButton && (
           <motion.div
             className="fixed bottom-28 flex w-full  items-center justify-center "
+            variants={itemVariants}
             key="arrow-button"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1,}}
-            exit={{ opacity: 0, transition: {
-              duration: 0.1,
-            }, }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
             <Button
               onMouseEnter={handleMouseEnter}
@@ -121,6 +119,7 @@ export default function Hero() {
             </Button>
           </motion.div>
         )}
+    </motion.div>
         
       </AnimatePresence>
     </section>
