@@ -10,7 +10,7 @@ export default function Skills() {
     <div className=" w-full ">
       <div className="flex flex-col items-center space-y-8">
         <p className="text-lg text-zinc-400">
-          Technologies I enjoy working with/in:
+          Technologies I enjoy working with:
         </p>
         <div
           id="light-theme"
@@ -19,6 +19,7 @@ export default function Skills() {
           <SkillsIcon imageSrc="/dotnet-color.svg" />
           <SkillsIcon imageSrc="/react-color.svg" />
           <SkillsIcon imageSrc="/typescript-color.svg" />
+          <SkillsIcon imageSrc="/javascript-color.svg" />
           <SkillsIcon imageSrc="/css3-color.svg" />
           <SkillsIcon imageSrc="/html5-color.svg" />
           <SkillsIcon imageSrc="/docker-color.svg" />
@@ -30,6 +31,7 @@ export default function Skills() {
           <SkillsIcon imageSrc="/dotnet.svg" />
           <SkillsIcon imageSrc="/react.svg" />
           <SkillsIcon imageSrc="/typescript.svg" />
+          <SkillsIcon imageSrc="/javascript.svg" />
           <SkillsIcon imageSrc="/css3.svg" />
           <SkillsIcon imageSrc="/html5.svg" />
           <SkillsIcon imageSrc="/docker.svg" />

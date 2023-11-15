@@ -68,10 +68,10 @@ export default function Hero() {
         autoPlay
         muted
         loop
-        className="hidden dark:inline-block absolute top-0 left-0 w-full h-[106vh] opacity-10 repeat-0 object-cover z-0"
+        className="hidden dark:inline-block absolute top-0 left-0 w-full h-[111vh] opacity-10 repeat-0 object-cover z-0"
         src="https://utfs.io/f/050a2f08-ccc6-40b5-8318-e782e7af467c-kyineo.mp4"
       ></video>
-      <div className="hidden dark:inline-block absolute -bottom-14 left-0 w-full h-16 bg-gradient-to-t from-background to-transparent z-10"></div>   
+      <div className="hidden dark:inline-block absolute -bottom-24 left-0 w-full h-16 bg-gradient-to-t from-background to-transparent z-10"></div>   
      
       <motion.h1
         variants={itemVariants}
