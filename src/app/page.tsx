@@ -15,7 +15,7 @@ export default function Home() {
         <Hero />
       </div>
       <div className="scrollable-content flex flex-col justify-center items-center h-screen">
-        DAMNS
+        DAMN DUDE
       </div>
     </main>
   );

@@ -68,10 +68,10 @@ export default function Hero() {
         autoPlay
         muted
         loop
-        className="hidden dark:inline-block absolute top-0 left-0 w-full h-screen opacity-10 repeat-0 object-cover"
+        className="hidden dark:inline-block absolute top-0 left-0 w-full h-screen opacity-10 repeat-0 object-cover z-0"
         src="https://utfs.io/f/050a2f08-ccc6-40b5-8318-e782e7af467c-kyineo.mp4"
       ></video>
-      <div className="hidden dark:inline-block absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-background to-transparent"></div>   
+      <div className="hidden dark:inline-block absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-background to-transparent z-10"></div>   
      
       <motion.h1
         variants={itemVariants}
@@ -98,12 +98,11 @@ export default function Hero() {
         <p>Get in touch</p>
         <RocketIcon className="w-4 h-4"/>
       </Button>
-
       </motion.div>
     </motion.div>
-        {showArrowButton && (
+      {showArrowButton && (
           <motion.div
-            className="relative flex w-full h-full items-center justify-center"
+            className="absolute bottom-28 flex w-full h-full items-center justify-center z-20"
             key="arrow-button"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -114,12 +113,13 @@ export default function Hero() {
               onMouseLeave={handleMouseLeave}
               size="icon"
               variant="ghost"
-              className="absolute rounded-full animate-bounce bottom-24"
+              className=" rounded-full animate-bounce"
             >
               <ArrowDownIcon className="w-5 h-5 mx-auto text-muted-foreground" />
             </Button>
           </motion.div>
         )}
+        
       </AnimatePresence>
     </section>
   );
