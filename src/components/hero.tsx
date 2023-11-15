@@ -100,9 +100,9 @@ export default function Hero() {
       </Button>
       </motion.div>
     </motion.div>
-      {showArrowButton && (
+    {showArrowButton && (
           <motion.div
-            className="absolute bottom-28 flex w-full h-full items-center justify-center z-20"
+            className="relative bottom-28 flex  items-center justify-center "
             key="arrow-button"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
