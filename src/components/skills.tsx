@@ -4,39 +4,60 @@ import { useHover } from "@/lib/hover-context";
 import Image from "next/image";
 import React from "react";
 import SkillsIcon from "./skills-icon";
+import { motion, useMotionValue } from "framer-motion";
 
 export default function Skills() {
+  let mouseX = useMotionValue(Infinity);
+
+  const isMobile = window.innerWidth <= 768;
+
+  const handleMouseMove = (e: any) => {
+    if (!isMobile) {
+      mouseX.set(e.pageX);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!isMobile) {
+      mouseX.set(Infinity);
+    }
+  };
+
   return (
-    <div className=" w-full ">
-      <div className="flex flex-col items-center space-y-8">
+    <motion.div className="w-full relative">
+      <motion.div className="flex flex-col items-center space-y-8">
         <p className="text-lg text-zinc-400">
           Technologies I enjoy working with:
         </p>
-        <div
+        <motion.div
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
           id="light-theme"
-          className="flex flex-wrap justify-center md:justify-between gap-10 lg:gap-20 px-5  items-center dark:hidden"
+          className="dark:hidden mx-auto flex flex-wrap justify-center items-end gap-x-12 gap-y-4 rounded-2xl px-4 pb-3"
         >
-          <SkillsIcon imageSrc="/dotnet-color.svg" />
-          <SkillsIcon imageSrc="/react-color.svg" />
-          <SkillsIcon imageSrc="/typescript-color.svg" />
-          <SkillsIcon imageSrc="/javascript-color.svg" />
-          <SkillsIcon imageSrc="/css3-color.svg" />
-          <SkillsIcon imageSrc="/html5-color.svg" />
-          <SkillsIcon imageSrc="/docker-color.svg" />
-        </div>
-        <div
+          <SkillsIcon mouseX={mouseX} imageSrc="/dotnet-color.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/react-color.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/typescript-color.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/javascript-color.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/css3-color.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/html5-color.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/docker-color.svg" />
+        </motion.div>
+        <motion.div
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
           id="dark-theme"
-          className="dark:flex flex-wrap justify-center md:justify-between gap-10 lg:gap-20 px-5  items-center hidden"
+          className="hidden mx-auto dark:flex flex-wrap justify-center items-end gap-x-12 gap-y-4 rounded-2xl px-4 pb-3"
         >
-          <SkillsIcon imageSrc="/dotnet.svg" />
-          <SkillsIcon imageSrc="/react.svg" />
-          <SkillsIcon imageSrc="/typescript.svg" />
-          <SkillsIcon imageSrc="/javascript.svg" />
-          <SkillsIcon imageSrc="/css3.svg" />
-          <SkillsIcon imageSrc="/html5.svg" />
-          <SkillsIcon imageSrc="/docker.svg" />
-        </div>
-      </div>
-    </div>
+          <SkillsIcon mouseX={mouseX} imageSrc="/dotnet.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/react.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/typescript.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/javascript.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/css3.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/html5.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/docker.svg" />
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }

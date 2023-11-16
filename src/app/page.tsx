@@ -15,6 +15,7 @@ export default function Home() {
       </div>
       <div className="scrollable-content flex flex-col items-center h-screen">
         <Skills />
+        This is where all my projects go
       </div>
     </main>
   );

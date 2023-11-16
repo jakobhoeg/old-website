@@ -6,7 +6,6 @@ import debounce from "lodash/debounce";
 import { useHover } from "@/lib/hover-context";
 import { AnimatePresence, motion } from "framer-motion";
 
-
 export default function Hero() {
   const [showArrowButton, setShowArrowButton] = useState(true);
   const { setHovered } = useHover();
@@ -33,7 +32,7 @@ export default function Hero() {
   }, []);
 
   const containerVariants = {
-    hidden: { opacity: 0, y: '-10%' },
+    hidden: { opacity: 0, y: "-10%" },
     visible: {
       opacity: 1,
       y: 0,
@@ -43,9 +42,9 @@ export default function Hero() {
       },
     },
   };
-  
+
   const itemVariants = {
-    hidden: { opacity: 0, y: '-10%' },
+    hidden: { opacity: 0, y: "-10%" },
     visible: {
       opacity: 1,
       y: 0,
@@ -58,70 +57,67 @@ export default function Hero() {
   return (
     <section className="w-full ">
       <AnimatePresence>
-      <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      className="relative flex flex-col items-center justify-center w-full min-h-screen gap-6"
-    >
-      <div className="hidden dark:inline-block absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-background to-transparent z-10"></div>   
-      <video
-        autoPlay
-        muted
-        loop
-        className="hidden dark:inline-block absolute top-0 left-0 w-full h-[111vh] opacity-20 repeat-0 object-cover z-0"
-        src="https://utfs.io/f/050a2f08-ccc6-40b5-8318-e782e7af467c-kyineo.mp4"
-      ></video>
-      <div className="hidden dark:inline-block absolute -bottom-24 left-0 w-full h-16 bg-gradient-to-t from-background to-transparent z-10"></div>   
-     
-      <motion.h1
-        variants={itemVariants}
-        className="text-center text-5xl lg:text-7xl max-w-5xl prose font-bold"
-      >
-        Software developer with a passion for design
-      </motion.h1>
-      <motion.h2
-        variants={itemVariants}
-        className="text-center text-lg md:text-2xl text-muted-foreground"
-      >
-        Trying to create cool stuff <br />
-        since 1995.
-      </motion.h2>
-      <motion.div
-      variants={itemVariants}
-      >
-      <Button
-      size="lg"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="rounded-full gap-2"
-      >
-        <p>Get in touch</p>
-        <RocketIcon className="w-4 h-4"/>
-      </Button>
-      </motion.div>
-    {showArrowButton && (
-          <motion.div
-            className="fixed bottom-28 flex w-full  items-center justify-center "
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="relative flex flex-col items-center justify-center w-full min-h-screen gap-6"
+        >
+          <div className="hidden dark:inline-block absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-background to-transparent z-10"></div>
+          <video
+            autoPlay
+            muted
+            loop
+            className="hidden dark:inline-block absolute top-0 left-0 w-full h-[111vh] opacity-20 md:opacity-10 repeat-0 object-cover z-0"
+            src="https://utfs.io/f/050a2f08-ccc6-40b5-8318-e782e7af467c-kyineo.mp4"
+          ></video>
+          <div className="hidden dark:inline-block absolute -bottom-24 left-0 w-full h-16 bg-gradient-to-t from-background to-transparent z-10"></div>
+
+          <motion.h1
             variants={itemVariants}
-            key="arrow-button"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            className="text-center text-5xl lg:text-7xl max-w-5xl prose font-bold"
           >
+            Software developer with a passion for design
+          </motion.h1>
+          <motion.h2
+            variants={itemVariants}
+            className="text-center text-lg md:text-2xl text-muted-foreground"
+          >
+            Trying to create cool stuff <br />
+            since 1995.
+          </motion.h2>
+          <motion.div variants={itemVariants}>
             <Button
+              size="lg"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              size="icon"
-              variant="ghost"
-              className=" rounded-full animate-bounce"
+              className="rounded-full gap-2"
             >
-              <ArrowDownIcon className="w-5 h-5 mx-auto text-muted-foreground" />
+              <p>Get in touch</p>
+              <RocketIcon className="w-4 h-4" />
             </Button>
           </motion.div>
-        )}
-    </motion.div>
-        
+          {showArrowButton && (
+            <motion.div
+              className="fixed bottom-28 flex w-full  items-center justify-center "
+              variants={itemVariants}
+              key="arrow-button"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <Button
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                size="icon"
+                variant="ghost"
+                className=" rounded-full animate-bounce"
+              >
+                <ArrowDownIcon className="w-5 h-5 mx-auto text-muted-foreground" />
+              </Button>
+            </motion.div>
+          )}
+        </motion.div>
       </AnimatePresence>
     </section>
   );
