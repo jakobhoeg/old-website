@@ -1,6 +1,7 @@
 import Cursor from "@/components/cursor";
 import Hero from "@/components/hero";
 import { ModeToggle } from "@/components/mode-toggle";
+import MyProjects from "@/components/my-projects";
 import Navbar from "@/components/navbar";
 import Skills from "@/components/skills";
 import Image from "next/image";
@@ -13,9 +14,11 @@ export default function Home() {
       <div className="scrollable-content -mt-20 flex flex-col justify-center items-center h-screen">
         <Hero />
       </div>
-      <div className="scrollable-content flex flex-col items-center h-screen">
+      <div className="h-[45vh] flex flex-col items-center ">
         <Skills />
-        
+      </div>
+      <div className="scrollable-content h-screen ">
+        <MyProjects />
       </div>
     </main>
   );

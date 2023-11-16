@@ -50,7 +50,7 @@ export default function Skills() {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           id="light-theme"
-          className="dark:hidden mx-auto flex flex-wrap justify-center items-end gap-x-12 gap-y-4 rounded-2xl px-4 pb-3"
+          className="dark:hidden mx-auto flex flex-wrap justify-center items-end gap-x-20 gap-y-4 rounded-2xl px-4 pb-3"
         >
           <SkillsIcon mouseX={mouseX} imageSrc="/dotnet-color.svg" />
           <SkillsIcon mouseX={mouseX} imageSrc="/react-color.svg" />
@@ -64,7 +64,7 @@ export default function Skills() {
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           id="dark-theme"
-          className="hidden mx-auto dark:flex flex-wrap justify-center items-end gap-x-12 gap-y-4 rounded-2xl px-4 pb-3"
+          className="hidden mx-auto dark:flex flex-wrap justify-center items-end gap-x-12 lg:gap-x-20 gap-y-4 rounded-2xl px-4 pb-3"
         >
           <SkillsIcon mouseX={mouseX} imageSrc="/dotnet.svg" />
           <SkillsIcon mouseX={mouseX} imageSrc="/react.svg" />
