@@ -2,14 +2,31 @@
 
 import { useHover } from "@/lib/hover-context";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import SkillsIcon from "./skills-icon";
 import { motion, useMotionValue } from "framer-motion";
 
 export default function Skills() {
   let mouseX = useMotionValue(Infinity);
+  const [isMobile, setIsMobile] = React.useState(false);
 
-  const isMobile = window.innerWidth <= 768;
+
+  useEffect(() => {
+    const checkScreenWidth = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    checkScreenWidth();
+
+    // Event listener for screen width changes
+    window.addEventListener("resize", checkScreenWidth);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", checkScreenWidth);
+    };
+  }, []);
 
   const handleMouseMove = (e: any) => {
     if (!isMobile) {
