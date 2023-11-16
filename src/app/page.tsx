@@ -8,8 +8,6 @@ import Image from "next/image";
 export default function Home() {
   return (
     <main className="relative flex flex-col w-full min-h-screen">
-      
-
       <Cursor />
       <Navbar />
       <div className="scrollable-content -mt-20 flex flex-col justify-center items-center h-screen">

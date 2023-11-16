@@ -64,24 +64,25 @@ export default function Hero() {
       animate="visible"
       className="relative flex flex-col items-center justify-center w-full min-h-screen gap-6"
     >
+      <div className="hidden dark:inline-block absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-background to-transparent z-10"></div>   
       <video
         autoPlay
         muted
         loop
-        className="hidden dark:inline-block absolute top-0 left-0 w-full h-[111vh] opacity-10 repeat-0 object-cover z-0"
+        className="hidden dark:inline-block absolute top-0 left-0 w-full h-[111vh] opacity-20 repeat-0 object-cover z-0"
         src="https://utfs.io/f/050a2f08-ccc6-40b5-8318-e782e7af467c-kyineo.mp4"
       ></video>
       <div className="hidden dark:inline-block absolute -bottom-24 left-0 w-full h-16 bg-gradient-to-t from-background to-transparent z-10"></div>   
      
       <motion.h1
         variants={itemVariants}
-        className="text-center text-7xl max-w-5xl font-bold"
+        className="text-center text-5xl lg:text-7xl max-w-5xl prose font-bold"
       >
         Software developer with a passion for design
       </motion.h1>
       <motion.h2
         variants={itemVariants}
-        className="text-center text-2xl text-muted-foreground"
+        className="text-center text-lg md:text-2xl text-muted-foreground"
       >
         Trying to create cool stuff <br />
         since 1995.

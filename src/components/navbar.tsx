@@ -54,14 +54,14 @@ function NavbarFixed() {
   };
 
   return (
-    <nav className="text-sm z-10 flex justify-between items-center w-full px-28 py-6 top-4">
-      <Link href="/">
+    <nav className=" text-sm z-10  flex justify-between items-center w-full px-8 py-5 md:px-28 md:py-6 top-4">
+      <Link href="/" className="flex-shrink-0">
         <Image
           src="/logo.svg"
           alt="logo"
           width={38}
           height={38}
-          className="dark:invert cursor-hover flex flex-shrink-0"
+          className="dark:invert cursor-hover "
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         />
@@ -71,12 +71,12 @@ function NavbarFixed() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           size="sm"
-          className="cursor-hover rounded-full"
+          className="cursor-hover rounded-full hidden md:flex"
         >
           Get in touch
         </Button>
         {menuList.map((item) => (
-          <li key={item.name}>
+          <li key={item.name} className="hidden md:flex">
             <Link
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
@@ -118,7 +118,7 @@ function NavbarScroll({ isScrolling }: NavbarScrollProps) {
       animate={isScrolling ? "animate" : "initial"}
       exit="exit"
       variants={NavAnimations}
-      className="text-sm bg-muted/30 backdrop-blur fixed z-10 flex justify-between items-center px-4 py-2 rounded-full ts-bg left-1/2 top-10"
+      className="text-xs md:text-sm bg-muted/30 backdrop-blur fixed z-10 flex justify-between items-center px-4 py-2 rounded-full ts-bg left-1/2 top-10"
     >
       <ul className="flex items-center/50 items-center space-x-4">
         <Button

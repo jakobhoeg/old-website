@@ -26,7 +26,7 @@ export default function Skills() {
         </div>
         <div
           id="dark-theme"
-          className=" justify-between gap-20  items-center hidden dark:flex"
+          className="dark:flex flex-wrap justify-center md:justify-between gap-10 lg:gap-20 px-5  items-center hidden"
         >
           <SkillsIcon imageSrc="/dotnet.svg" />
           <SkillsIcon imageSrc="/react.svg" />
