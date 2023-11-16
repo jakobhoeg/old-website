@@ -7,7 +7,7 @@ export default function MyProjects() {
         <div className="text-center  space-y-1 md:space-y-4">
           <p className="text-4xl md:text-6xl font-bold max-w-prose">Projects I've worked on</p>
           <p className="md:text-2xl prose text-zinc-400">
-            Some of the projects I've worked on, I am more proud of than others.
+            Some of the projects I've worked on, I am more proud of than others. <br />
             These will be showcased here.
           </p>
           
