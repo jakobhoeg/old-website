@@ -54,7 +54,7 @@ function NavbarFixed() {
   };
 
   return (
-    <nav className=" text-sm z-10  flex justify-between items-center w-full px-8 py-5 md:px-28 md:py-6 top-4">
+    <nav className="absolute text-sm z-10  flex justify-between items-center w-full px-8 py-5 md:px-28 md:py-6 top-4">
       <Link href="/" className="flex-shrink-0">
         <Image
           src="/logo.svg"

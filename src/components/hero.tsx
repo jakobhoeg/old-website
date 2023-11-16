@@ -83,8 +83,7 @@ export default function Hero() {
             variants={itemVariants}
             className="text-center text-lg md:text-2xl text-muted-foreground"
           >
-            Trying to create cool stuff <br />
-            since 1995.
+            Trying to create cool stuff since 1995.
           </motion.h2>
           <motion.div variants={itemVariants}>
             <Button

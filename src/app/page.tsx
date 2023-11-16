@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <main className="relative flex flex-col w-full min-h-screen">
       <Cursor />
+      <div className="scrollable-content -mt-10 md:mt-0 flex flex-col justify-center items-center h-screen">
       <Navbar />
-      <div className="scrollable-content -mt-20 flex flex-col justify-center items-center h-screen">
         <Hero />
       </div>
       <div className="h-[45vh] flex flex-col items-center ">
