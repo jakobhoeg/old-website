@@ -22,6 +22,7 @@ export default function SkillsIcon({ imageSrc }: Props) {
   return (
     <motion.div
     whileHover={{ scale: 1.3, rotate: 4, transition: { duration: 0.2 } }}
+    className='flex flex-wrap flex-shrink-0'
     >
 
     <Image
@@ -31,7 +32,7 @@ export default function SkillsIcon({ imageSrc }: Props) {
             src={imageSrc}
             width={60}
             height={60}
-            className="shake shake:hover dark:invert"
+            className="shake shake:hover dark:invert w-10 h-10 lg:w-14 lg:h-14 "
     >
     </Image>
     </motion.div>
