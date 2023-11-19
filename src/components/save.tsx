@@ -47,20 +47,20 @@ export default function MyProjects() {
   };
 
   return (
-    <section className="w-full h-full flex justify-center overflow-hidden ">
-      <div className="flex flex-col w-full items-center  ">
-        <div className="text-center w-full space-y-1 md:space-y-4  px-2">
+    <section className="w-full h-full flex justify-center overflow-hidden">
+      <div className="flex flex-col items-center">
+        <div className="text-center  space-y-1 md:space-y-4">
           <p className="text-4xl md:text-6xl font-bold max-w-prose">
             Projects I&apos;ve worked on
           </p>
           <p className="md:text-2xl prose text-zinc-400">
             Some of the projects I&apos;ve worked on, I am more proud of than
-            others.
+            others. <br />
             These will be showcased here.
           </p>
           <div
             ref={containerRef}
-            className="relative lg:pl-72  flex overflow-x-hidden py-5"
+            className="relative lg:pl-72 flex overflow-x-hidden py-5"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -109,18 +109,18 @@ export function Card() {
   ];
 
   return (
-    <div className="flex gap-5 w-full">
+    <div className="flex gap-4 ">
       {cards.map((card) => (
-        <div key={card.id} className="flex flex-col items-start border rounded-lg p-8 w-full md:w-auto flex-shrink-0 ">
+        <div key={card.id} className="flex flex-col border rounded-lg p-8 lg:flex-shrink-0">
           <video
             autoPlay
             muted
             loop
             playsInline
-            className="object-cover h-64 md:h-96 "
+            className="object-cover h-96 w-full"
             src={card.videoSrc}
           ></video>
-          <div className="text-left items-start pt-3 w-full">
+          <div className="text-left items-start pt-3">
             <div className="flex items-center justify-between">
               <p>{card.title}</p>
               {card.showcaseUrl && (
@@ -133,7 +133,7 @@ export function Card() {
               </Button>
               )}
             </div>
-            <p className="pt-2 lg:w-96 text-muted-foreground">{card.description}</p>
+            <p className="w-96 text-muted-foreground">{card.description}</p>
           </div>
         </div>
       ))}
