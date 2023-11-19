@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import { Button } from "./ui/button";
 import { ExternalLinkIcon, Link1Icon } from "@radix-ui/react-icons";
+import Image from "next/image";
 
 interface CardType {
   id: number;
@@ -12,6 +13,7 @@ interface CardType {
   imageAlt?: string;
   videoAlt?: string;
   showcaseUrl?: string;
+  skills?: string[];
 }
 
 export default function MyProjects() {
@@ -55,8 +57,7 @@ export default function MyProjects() {
           </p>
           <p className="md:text-2xl prose text-zinc-400">
             Some of the projects I&apos;ve worked on, I am more proud of than
-            others.
-            These will be showcased here.
+            others. These will be showcased here.
           </p>
           <div
             ref={containerRef}
@@ -87,6 +88,7 @@ export function Card() {
         "https://utfs.io/f/5b16af86-9095-4aae-a7d1-8b1c5bb0a9b1-mew4t3.MP4",
       videoAlt: "Proglio",
       showcaseUrl: "https://www.proglio.app/",
+      skills: ["/nextdotjs.svg", "/typescript.svg", "/mongodb.svg", "/tailwindcss.svg"],
     },
     {
       id: 2,
@@ -96,6 +98,7 @@ export function Card() {
       videoSrc:
         "https://utfs.io/f/343d1d89-90b6-440c-93b9-863ad9e32d9e-56ywvu.mp4",
       videoAlt: "Unity Game",
+      skills: ["/unity.svg", "/csharp.svg", "/aseprite.svg"],
     },
     {
       id: 3,
@@ -111,29 +114,47 @@ export function Card() {
   return (
     <div className="flex gap-5 w-full">
       {cards.map((card) => (
-        <div key={card.id} className="flex flex-col items-start border rounded-lg p-8 w-full md:w-auto flex-shrink-0 ">
+        <div
+          key={card.id}
+          className=" flex flex-col items-center border rounded-lg p-8 w-full md:w-auto flex-shrink-0 scroll-snap-align-start"
+        >
           <video
             autoPlay
             muted
+            controls
+            title="Video of project"
             loop
             playsInline
-            className="object-cover h-64 md:h-96 "
+            className="object-cover rounded-lg h-64 md:h-96 "
             src={card.videoSrc}
           ></video>
           <div className="text-left items-start pt-3 w-full">
             <div className="flex items-center justify-between">
               <p>{card.title}</p>
-              {card.showcaseUrl && (
-                <Button
-                className="rounded-full"
-                variant="outline"
-                onClick={() => window.open(card.showcaseUrl, "_blank")}
-              >
-                <ExternalLinkIcon className="w-4 h-4" />
-              </Button>
-              )}
+              <div className="flex items-center gap-5">
+                <div >
+                  {card.skills && (
+                    <div className="flex gap-2">
+                      {card.skills.map((skill) => (
+                        <Image alt={skill} key={skill} width="24" height="24" src={skill} className="w-5 h-5 dark:invert" />
+                      ))}
+                    </div>
+                  )}
+                </div>
+                {card.showcaseUrl && (
+                  <Button
+                    className="rounded-full"
+                    variant="outline"
+                    onClick={() => window.open(card.showcaseUrl, "_blank")}
+                  >
+                    <ExternalLinkIcon className="w-4 h-4" />
+                  </Button>
+                )}
+              </div>
             </div>
-            <p className="pt-2 lg:w-96 text-muted-foreground">{card.description}</p>
+            <p className="pt-2 lg:w-96 text-muted-foreground">
+              {card.description}
+            </p>
           </div>
         </div>
       ))}
