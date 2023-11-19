@@ -136,7 +136,7 @@ export function Card() {
                   {card.skills && (
                     <div className="flex gap-2">
                       {card.skills.map((skill) => (
-                        <Image alt={skill} key={skill} width="24" height="24" src={skill} className="w-4 h-4 md:w-5 md:h-5 dark:invert" />
+                        <Image alt={skill} key={skill} width="24" height="24" src={skill} className="w-4 h-4 md:w-5 md:h-5 dark:invert opacity-30" />
                       ))}
                     </div>
                   )}
