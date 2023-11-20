@@ -18,10 +18,10 @@ export default function Home() {
       <div className="h-[50vh] flex flex-col items-center ">
         <Skills />
       </div>
-      <div className="md:mb-40 h-screen">
+      <div id="projects" className="md:mb-40 h-screen">
         <MyProjects />
       </div>
-      <div className="h-[50vh]">
+      <div id="contact"  className="h-[50vh]">
         <Contact/>
       </div>
     </main>

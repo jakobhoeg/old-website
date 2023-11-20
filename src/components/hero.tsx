@@ -92,7 +92,8 @@ export default function Hero() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               className="rounded-full gap-2"
-            >
+              onClick={() => document.getElementById("contact")?.scrollIntoView()}
+              >
               <p>Get in touch</p>
               <RocketIcon className="w-4 h-4" />
             </Button>

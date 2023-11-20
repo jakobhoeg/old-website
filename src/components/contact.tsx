@@ -36,7 +36,7 @@ export default function Contact() {
               >
                 email
               </strong>
-              , or get in touch with me on any of the platforms below:
+              , or get in touch with me here:
 
             </a>
           </p>

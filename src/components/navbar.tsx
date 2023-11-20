@@ -9,7 +9,7 @@ import { useHover } from "@/lib/hover-context";
 
 const menuList = [
   { name: "Home", href: "/" },
-  { name: "Projects", href: "/" },
+  { name: "Projects", href: "", section: "projects" },
   { name: "Blog", href: "/" },
   { name: "About", href: "/" },
 ];
@@ -32,11 +32,8 @@ export default function Navbar() {
   return (
     <>
       <AnimatePresence>
-      <NavbarFixed />
-        {isScrolling && (
-          <NavbarScroll isScrolling={isScrolling} />
-        ) 
-      }
+        <NavbarFixed />
+        {isScrolling && <NavbarScroll isScrolling={isScrolling} />}
       </AnimatePresence>
     </>
   );
@@ -68,6 +65,7 @@ function NavbarFixed() {
       </Link>
       <ul className="flex items-center/50 items-center space-x-4 mx-auto">
         <Button
+          onClick={() => document.getElementById("contact")?.scrollIntoView()}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           size="sm"
@@ -82,6 +80,9 @@ function NavbarFixed() {
               onMouseLeave={handleMouseLeave}
               className="cursor-hover"
               href={item.href}
+              onClick={() =>
+                document.getElementById(item.section!)?.scrollIntoView()
+              }
             >
               {item.name}
             </Link>
@@ -122,6 +123,7 @@ function NavbarScroll({ isScrolling }: NavbarScrollProps) {
     >
       <ul className="flex items-center/50 items-center space-x-4">
         <Button
+          onClick={() => document.getElementById("contact")?.scrollIntoView()}
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
           size="sm"
@@ -135,6 +137,9 @@ function NavbarScroll({ isScrolling }: NavbarScrollProps) {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               href={item.href}
+              onClick={() =>
+                document.getElementById(item.section!)?.scrollIntoView()
+              }
             >
               {item.name}
             </Link>
