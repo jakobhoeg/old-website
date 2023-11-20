@@ -59,11 +59,6 @@
   }
 }
 
-
-.scrollable-content {
-  max-height: 100vh; 
-}
-
 body {
   cursor: none;
   }
@@ -116,9 +111,5 @@ button {
 
 html, body {
   scroll-behavior: smooth;
-}
-
-.coolbg {
-  background: linear-gradient(270deg,rgba(61,53,78,0) 28.87%,#3d354e 45.39%,#3d354e 53.54%,rgba(61,53,78,0) 70.06%);
 }
 
