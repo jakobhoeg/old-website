@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
         <Hero />
       </div>
-      <div className="h-[45vh] flex flex-col items-center ">
+      <div className="h-[50vh] flex flex-col items-center ">
         <Skills />
       </div>
       <div className="scrollable-content h-screen ">
