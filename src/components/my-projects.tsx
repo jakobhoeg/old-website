@@ -146,7 +146,8 @@ export function Card() {
               <div className="flex items-center gap-5">
                 <div >
                   {card.skills && (
-                    <div className="flex gap-2">
+                    <div className="flex gap-2"
+                    key={card.id}>
                       {card.skills.map((skill) => (
                         <div
                         key={skill.key}
