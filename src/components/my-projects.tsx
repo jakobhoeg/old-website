@@ -149,6 +149,7 @@ export function Card() {
                    <div className="flex gap-2" key={card.id}>
                    {card.skills.map((skill, index) => (
                      <div key={index}>{skill}</div>
+                     
                    ))}
                  </div>
                   )}
