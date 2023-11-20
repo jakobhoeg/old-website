@@ -151,13 +151,15 @@ export function Card() {
                       {card.skills.map((skill) => (
                         <div
                         key={skill.key}
-                        >{skill}</div>  
+                        >{skill}
+                        </div>  
                       ))}
                     </div>
                   )}
                 </div>
                 {card.showcaseUrl && (
                   <Button
+                  key={card.id}
                   onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                     className="rounded-full"
