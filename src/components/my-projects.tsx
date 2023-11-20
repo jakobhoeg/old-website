@@ -2,8 +2,8 @@
 import React, { ReactElement, useRef, useState } from "react";
 import { Button } from "./ui/button";
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
-import { SiAseprite, SiCsharp, SiMongodb, SiNextdotjs, SiTailwindcss, SiTypescript, SiUnity } from "@icons-pack/react-simple-icons";
 import { useHover } from "@/lib/hover-context";
+import Image from "next/image";
 
 interface CardType {
   id: number;
@@ -14,7 +14,7 @@ interface CardType {
   imageAlt?: string;
   videoAlt?: string;
   showcaseUrl?: string;
-  skills?: ReactElement[];
+  skills?: string[];
 }
 
 export default function MyProjects() {
@@ -100,7 +100,7 @@ export function Card() {
         "https://utfs.io/f/5b16af86-9095-4aae-a7d1-8b1c5bb0a9b1-mew4t3.MP4",
       videoAlt: "Proglio",
       showcaseUrl: "https://www.proglio.app/",
-      skills: [<SiNextdotjs className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />, <SiTypescript  className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />, <SiMongodb  className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />, <SiTailwindcss  className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground"/>],
+      skills: ["/nextdotjs.svg", "/typescript.svg", "/mongodb.svg", "/tailwindcss.svg"],
     },
     {
       id: 2,
@@ -110,7 +110,7 @@ export function Card() {
       videoSrc:
         "https://utfs.io/f/343d1d89-90b6-440c-93b9-863ad9e32d9e-56ywvu.mp4",
       videoAlt: "Unity Game",
-      skills: [<SiUnity className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground"/>, <SiCsharp className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />, <SiAseprite className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground"/>],
+      skills: ["/unity.svg", "/csharp.svg", "/aseprite.svg"],
     },
     {
       id: 3,
@@ -144,14 +144,13 @@ export function Card() {
             <div className="flex items-center justify-between">
               <p>{card.title}</p>
               <div className="flex items-center gap-5">
-                <div >
+              <div >
                   {card.skills && (
-                   <div className="flex gap-2" key={card.id}>
-                   {card.skills.map((skill, index) => (
-                     <div key={index}>{skill}</div>
-                     
-                   ))}
-                 </div>
+                    <div className="flex gap-2">
+                      {card.skills.map((skill) => (
+                        <Image alt={skill} key={skill} width="24" height="24" src={skill} className="w-4 h-4 md:w-5 md:h-5 dark:invert opacity-40" />
+                      ))}
+                    </div>
                   )}
                 </div>
                 {card.showcaseUrl && (
