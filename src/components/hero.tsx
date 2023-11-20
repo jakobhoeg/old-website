@@ -5,6 +5,7 @@ import { ArrowDownIcon, RocketIcon } from "@radix-ui/react-icons";
 import debounce from "lodash/debounce";
 import { useHover } from "@/lib/hover-context";
 import { AnimatePresence, motion } from "framer-motion";
+import { SiGithub, SiLinkedin, SiMaildotru } from "@icons-pack/react-simple-icons"
 
 export default function Hero() {
   const [showArrowButton, setShowArrowButton] = useState(true);

@@ -1,3 +1,4 @@
+import Contact from "@/components/contact";
 import Cursor from "@/components/cursor";
 import Hero from "@/components/hero";
 import { ModeToggle } from "@/components/mode-toggle";
@@ -17,8 +18,11 @@ export default function Home() {
       <div className="h-[50vh] flex flex-col items-center ">
         <Skills />
       </div>
-      <div className=" h-screen ">
+      <div className="md:mb-40 h-screen">
         <MyProjects />
+      </div>
+      <div className="h-[50vh]">
+        <Contact/>
       </div>
     </main>
   );

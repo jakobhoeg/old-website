@@ -1,8 +1,9 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { ReactElement, useRef, useState } from "react";
 import { Button } from "./ui/button";
-import { ExternalLinkIcon, Link1Icon } from "@radix-ui/react-icons";
-import Image from "next/image";
+import { ExternalLinkIcon } from "@radix-ui/react-icons";
+import { SiAseprite, SiCsharp, SiMongodb, SiNextdotjs, SiTailwindcss, SiTypescript, SiUnity } from "@icons-pack/react-simple-icons";
+import { useHover } from "@/lib/hover-context";
 
 interface CardType {
   id: number;
@@ -13,7 +14,7 @@ interface CardType {
   imageAlt?: string;
   videoAlt?: string;
   showcaseUrl?: string;
-  skills?: string[];
+  skills?: ReactElement[];
 }
 
 export default function MyProjects() {
@@ -49,12 +50,12 @@ export default function MyProjects() {
   };
 
   return (
-    <section className="w-full h-full flex justify-center overflow-hidden ">
+    <section className=" w-full h-full flex justify-center overflow-hidden ">
       <div className="flex flex-col w-full items-center  ">
         <div className="text-center w-full space-y-1 md:space-y-4  px-2">
-          <p className="text-4xl md:text-6xl font-bold max-w-prose">
+          <h1 className="text-4xl md:text-6xl font-bold max-w-prose">
             Projects I&apos;ve worked on
-          </p>
+          </h1>
           <p className="md:text-2xl prose text-zinc-400">
             Some of the projects I&apos;ve worked on, I am more proud of than
             others. These will be showcased here.
@@ -78,6 +79,17 @@ export default function MyProjects() {
 }
 
 export function Card() {
+  const { setHovered } = useHover();
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
+
   const cards: CardType[] = [
     {
       id: 1,
@@ -88,7 +100,7 @@ export function Card() {
         "https://utfs.io/f/5b16af86-9095-4aae-a7d1-8b1c5bb0a9b1-mew4t3.MP4",
       videoAlt: "Proglio",
       showcaseUrl: "https://www.proglio.app/",
-      skills: ["/nextdotjs.svg", "/typescript.svg", "/mongodb.svg", "/tailwindcss.svg"],
+      skills: [<SiNextdotjs className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />, <SiTypescript  className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />, <SiMongodb  className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />, <SiTailwindcss  className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground"/>],
     },
     {
       id: 2,
@@ -98,7 +110,7 @@ export function Card() {
       videoSrc:
         "https://utfs.io/f/343d1d89-90b6-440c-93b9-863ad9e32d9e-56ywvu.mp4",
       videoAlt: "Unity Game",
-      skills: ["/unity.svg", "/csharp.svg", "/aseprite.svg"],
+      skills: [<SiUnity className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground"/>, <SiCsharp className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground" />, <SiAseprite className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground"/>],
     },
     {
       id: 3,
@@ -136,13 +148,17 @@ export function Card() {
                   {card.skills && (
                     <div className="flex gap-2">
                       {card.skills.map((skill) => (
-                        <Image alt={skill} key={skill} width="24" height="24" src={skill} className="w-4 h-4 md:w-5 md:h-5 dark:invert opacity-30" />
+                        <div
+                        key={skill.key}
+                        >{skill}</div>  
                       ))}
                     </div>
                   )}
                 </div>
                 {card.showcaseUrl && (
                   <Button
+                  onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
                     className="rounded-full"
                     variant="outline"
                     onClick={() => window.open(card.showcaseUrl, "_blank")}
