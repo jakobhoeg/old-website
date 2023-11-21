@@ -4,12 +4,41 @@ import { Button } from "./ui/button";
 import { ArrowDownIcon, RocketIcon } from "@radix-ui/react-icons";
 import debounce from "lodash/debounce";
 import { useHover } from "@/lib/hover-context";
-import { AnimatePresence, motion } from "framer-motion";
-import { SiGithub, SiLinkedin, SiMaildotru } from "@icons-pack/react-simple-icons"
+import { AnimatePresence, motion, useSpring } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   const [showArrowButton, setShowArrowButton] = useState(true);
   const { setHovered } = useHover();
+  const [isHovered, setIsHovered] = useState(false);
+
+  const spring = {
+    stiffness: 150,
+
+    damping: 15,
+
+    mass: 0.1,
+  };
+
+  const mousePosition = {
+    x: useSpring(0, spring),
+
+    y: useSpring(0, spring),
+  };
+
+  const { x, y } = mousePosition;
+
+  const mouseMove = (e: MouseEvent) => {
+    const { clientX, clientY } = e;
+
+    const targetX = clientX - (window.innerWidth / 2) * -0.15;
+
+    const targetY = clientY - (window.innerWidth / 2) * 0.2;
+
+    mousePosition.x.set(targetX);
+
+    mousePosition.y.set(targetY);
+  };
 
   const handleMouseEnter = () => {
     setHovered(true);
@@ -56,8 +85,32 @@ export default function Hero() {
   };
 
   return (
-    <section className="w-full ">
+    <section className="w-full overflow-hidden ">
       <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            className="vignette"
+            key="vignette"
+            style={{ x, y }}
+            initial={{ scale: 0 }}
+            animate={{ scale: isHovered ? 1 : 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            exit={{
+              scale: 0,
+              transition: { duration: 0.2, ease: "easeInOut" },
+            }}
+          >
+            <div className="">
+              {/* <p className="absolute top-0 z-50">this is me</p> */}
+              <Image
+                src="/avatar.jpg"
+                alt="image"
+                fill
+                className="pointer-events-none"
+              />
+            </div>
+          </motion.div>
+        )}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -76,10 +129,21 @@ export default function Hero() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-center text-5xl lg:text-7xl max-w-5xl prose font-bold"
+            onMouseEnter={() => {
+              handleMouseEnter();
+              window.addEventListener("mousemove", mouseMove);
+              setIsHovered(true);
+            }}
+            onMouseLeave={() => {
+              handleMouseLeave();
+              window.removeEventListener("mousemove", mouseMove);
+              setIsHovered(false);
+            }}
+            className=" text-center text-5xl lg:text-7xl max-w-5xl prose font-bold"
           >
             Software developer with a passion for design
           </motion.h1>
+
           <motion.h2
             variants={itemVariants}
             className="text-center text-lg md:text-2xl text-muted-foreground"
@@ -92,8 +156,10 @@ export default function Hero() {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
               className="rounded-full gap-2"
-              onClick={() => document.getElementById("contact")?.scrollIntoView()}
-              >
+              onClick={() =>
+                document.getElementById("contact")?.scrollIntoView()
+              }
+            >
               <p>Get in touch</p>
               <RocketIcon className="w-4 h-4" />
             </Button>

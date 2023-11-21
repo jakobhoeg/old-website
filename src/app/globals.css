@@ -113,3 +113,20 @@ html, body {
   scroll-behavior: smooth;
 }
 
+.vignette{
+  
+  height: 12vw;
+
+  width: 12vw;
+  z-index: 50;
+
+  position: fixed;
+
+  top: 0;
+
+  border-radius: 10vw;
+
+  overflow: hidden;
+
+ 
+}
