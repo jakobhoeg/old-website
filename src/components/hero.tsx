@@ -11,6 +11,24 @@ export default function Hero() {
   const [showArrowButton, setShowArrowButton] = useState(true);
   const { setHovered } = useHover();
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenWidth = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Initial check
+    checkScreenWidth();
+
+    // Event listener for screen width changes
+    window.addEventListener("resize", checkScreenWidth);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", checkScreenWidth);
+    };
+  }, []);
 
   const spring = {
     stiffness: 150,
@@ -29,6 +47,7 @@ export default function Hero() {
   const { x, y } = mousePosition;
 
   const mouseMove = (e: MouseEvent) => {
+    if (!isMobile) {
     const { clientX, clientY } = e;
 
     const targetX = clientX - (window.innerWidth / 2) * -0.15;
@@ -38,14 +57,19 @@ export default function Hero() {
     mousePosition.x.set(targetX);
 
     mousePosition.y.set(targetY);
+    }
   };
 
   const handleMouseEnter = () => {
+    if (!isMobile) {
     setHovered(true);
+    }
   };
 
   const handleMouseLeave = () => {
+    if (!isMobile) {
     setHovered(false);
+    }
   };
 
   useEffect(() => {
@@ -130,14 +154,18 @@ export default function Hero() {
           <motion.h1
             variants={itemVariants}
             onMouseEnter={() => {
+              if (!isMobile) {
               handleMouseEnter();
               window.addEventListener("mousemove", mouseMove);
               setIsHovered(true);
+              }
             }}
             onMouseLeave={() => {
+              if (!isMobile) {
               handleMouseLeave();
               window.removeEventListener("mousemove", mouseMove);
               setIsHovered(false);
+              }
             }}
             className=" text-center text-5xl lg:text-7xl max-w-5xl prose font-bold"
           >
