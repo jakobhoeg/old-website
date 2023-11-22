@@ -62,7 +62,7 @@ export default function MyProjects() {
           </p>
           <div
             ref={containerRef}
-            className="relative lg:pl-72  flex overflow-x-hidden py-5"
+            className="relative lg:pl-72 flex overflow-x-scroll sm:overflow-x-hidden snap-x py-5 snap-mandatory snap-always sm:snap-none "
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -128,7 +128,7 @@ export function Card() {
       {cards.map((card) => (
         <div
           key={card.id}
-          className=" flex flex-col items-center border rounded-lg p-8 w-full md:w-auto flex-shrink-0 scroll-snap-align-start"
+          className=" flex flex-col items-center border rounded-lg p-8 w-11/12 md:w-auto flex-shrink-0 snap-center sm:snap-none"
         >
           <video
             autoPlay
@@ -140,8 +140,8 @@ export function Card() {
             className="object-cover rounded-lg h-64 md:h-96 "
             src={card.videoSrc}
           ></video>
-          <div className="text-left items-start pt-3 w-full">
-            <div className="flex items-center justify-between">
+          <div className="text-left items-start pt-3 w-full ">
+            <div className="flex items-center justify-between ">
               <p>{card.title}</p>
               <div className="flex items-center gap-5">
               <div >
