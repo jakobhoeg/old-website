@@ -111,7 +111,7 @@ export default function Hero() {
   return (
     <section className="w-full overflow-hidden ">
       <AnimatePresence>
-        {isHovered && (
+      {isHovered && (
           <motion.div
             className="vignette"
             key="vignette"
@@ -139,13 +139,16 @@ export default function Hero() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="relative flex flex-col items-center justify-center w-full min-h-screen gap-6"
+          className="absolute top-0 left-0 flex flex-col items-center justify-center w-full min-h-screen gap-6"
         >
           <div className="hidden dark:inline-block absolute top-0 left-0 w-full h-10 bg-gradient-to-b from-background to-transparent z-10"></div>
           <video
             autoPlay
             muted
             loop
+            controls={false}
+            playsInline
+            
             className="hidden dark:inline-block absolute top-0 left-0 w-full h-[111vh] opacity-20 md:opacity-10 repeat-0 object-cover z-0"
             src="https://utfs.io/f/050a2f08-ccc6-40b5-8318-e782e7af467c-kyineo.mp4"
           ></video>
