@@ -131,7 +131,7 @@ export function Card() {
           className=" flex flex-col items-center border rounded-lg p-8 w-11/12 md:w-auto flex-shrink-0 snap-center sm:snap-none"
         >
           <video
-            autoPlay
+            autoPlay = {false}
             muted
             controls
             title="Video of project"
