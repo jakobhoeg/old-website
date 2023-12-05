@@ -114,12 +114,13 @@ export function Card() {
     },
     {
       id: 3,
-      title: "Unity Game",
+      title: "C# 'AI Computer'",
       description:
-        "A 2D rougelike, bullet hell top-down game created in Unity Game Engine, coded in C# and designed by me.",
+        "C# console application that uses OpenAI's GPT-4 vision api to automate tasks on a computer. The program responds to your objective and adjusts it's actions based on screenshots sent to the AI.",
       videoSrc:
-        "https://utfs.io/f/343d1d89-90b6-440c-93b9-863ad9e32d9e-56ywvu.mp4",
-      videoAlt: "Unity Game",
+        "https://utfs.io/f/f2ce9f85-117b-4e83-b378-e8bc9733a00e-wzprz4.mp4",
+      videoAlt: "AI Computer",
+      skills: ["/csharp.svg", "/openai.svg"],
     },
   ];
 
@@ -137,6 +138,7 @@ export function Card() {
             title="Video of project"
             loop
             playsInline
+            preload="metadata"
             className="object-cover rounded-lg h-64 md:h-96 "
             src={card.videoSrc}
           ></video>
@@ -167,7 +169,7 @@ export function Card() {
                 )}
               </div>
             </div>
-            <p className="pt-2 lg:w-96 text-muted-foreground">
+            <p className="pt-2 md:w-96 lg:w-[450px] text-muted-foreground">
               {card.description}
             </p>
           </div>
