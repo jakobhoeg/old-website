@@ -95,7 +95,7 @@ export function Card() {
       id: 1,
       title: "Proglio",
       description:
-        "A full-stack collaborative task management tool created with NextJS, MongoDB & TypeScript.",
+        "A full-stack collaborative task management platform coded in React with NextJS, MongoDB & TypeScript.",
       videoSrc:
         "https://utfs.io/f/5b16af86-9095-4aae-a7d1-8b1c5bb0a9b1-mew4t3.MP4",
       videoAlt: "Proglio",
