@@ -112,16 +112,16 @@ export function Card() {
       videoAlt: "Unity Game",
       skills: ["/unity.svg", "/csharp.svg", "/aseprite.svg"],
     },
-    {
-      id: 3,
-      title: "C# 'AI Computer'",
-      description:
-        "C# console application that uses OpenAI's GPT-4 vision api to automate tasks on a computer. The program responds to your objective and adjusts it's actions based on screenshots sent to the AI.",
-      videoSrc:
-        "https://utfs.io/f/f2ce9f85-117b-4e83-b378-e8bc9733a00e-wzprz4.mp4",
-      videoAlt: "AI Computer",
-      skills: ["/csharp.svg", "/openai.svg"],
-    },
+    // {
+    //   id: 3,
+    //   title: "C# 'AI Computer'",
+    //   description:
+    //     "C# console application that uses OpenAI's GPT-4 vision api to automate tasks on a computer. The program responds to your objective and adjusts it's actions based on screenshots sent to the AI.",
+    //   videoSrc:
+    //     "https://utfs.io/f/f2ce9f85-117b-4e83-b378-e8bc9733a00e-wzprz4.mp4",
+    //   videoAlt: "AI Computer",
+    //   skills: ["/csharp.svg", "/openai.svg"],
+    // },
   ];
 
   return (
