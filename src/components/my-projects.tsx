@@ -112,16 +112,16 @@ export function Card() {
       videoAlt: "Unity Game",
       skills: ["/unity.svg", "/csharp.svg", "/aseprite.svg"],
     },
-    // {
-    //   id: 3,
-    //   title: "C# 'AI Computer'",
-    //   description:
-    //     "C# console application that uses OpenAI's GPT-4 vision api to automate tasks on a computer. The program responds to your objective and adjusts it's actions based on screenshots sent to the AI.",
-    //   videoSrc:
-    //     "https://utfs.io/f/f2ce9f85-117b-4e83-b378-e8bc9733a00e-wzprz4.mp4",
-    //   videoAlt: "AI Computer",
-    //   skills: ["/csharp.svg", "/openai.svg"],
-    // },
+    {
+      id: 3,
+      title: "Moodle-Lazy-DL Bot",
+      description:
+        "A Node.js automation script/bot that downloads all files from all your Moodle courses.",
+      videoSrc:
+        "https://utfs.io/f/beff1b02-f993-4d91-8f2d-d3559d97bd15-ngm1nx.mp4",
+      videoAlt: "Moodle Lazy DL Bot",
+      skills: ["/nodedotjs", "/playwright.svg"],
+    },
   ];
 
   return (
