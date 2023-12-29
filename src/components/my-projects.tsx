@@ -114,9 +114,9 @@ export function Card() {
     },
     {
       id: 3,
-      title: "Moodle-Lazy-DL Bot",
+      title: "Moodle Bot",
       description:
-        "A Node.js automation script/bot that downloads all files from all your Moodle courses.",
+        "A Node.js automation bot that downloads all files from all your Moodle courses.",
       videoSrc:
         "https://utfs.io/f/beff1b02-f993-4d91-8f2d-d3559d97bd15-ngm1nx.mp4",
       videoAlt: "Moodle Lazy DL Bot",
