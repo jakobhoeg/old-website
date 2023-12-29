@@ -121,7 +121,7 @@ export function Card() {
         "https://utfs.io/f/beff1b02-f993-4d91-8f2d-d3559d97bd15-ngm1nx.mp4",
       videoAlt: "Moodle Lazy DL Bot",
       showcaseUrl: "https://github.com/jakobhoeg/moodle-lazy-dl",
-      skills: ["/nodedotjs", "/playwright.svg"],
+      skills: ["/nodedotjs.svg", "/playwright.svg"],
     },
   ];
 
