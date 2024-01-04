@@ -106,7 +106,7 @@ export function Card() {
       id: 2,
       title: "Unity Game",
       description:
-        "A 2D rougelike, bullet hell top-down game created in Unity Game Engine, coded in C# and designed by me.",
+        "A 2D rougelike, bullet hell top-down game created in Unity Game Engine, coded in C# and designed by me. (Still a WIP).",
       videoSrc:
         "https://utfs.io/f/343d1d89-90b6-440c-93b9-863ad9e32d9e-56ywvu.mp4",
       videoAlt: "Unity Game",
