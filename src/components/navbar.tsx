@@ -4,8 +4,8 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
-import { ModeToggle } from "./mode-toggle";
 import { useHover } from "@/lib/hover-context";
+import { GithubBtn } from "./github_btn";
 
 const menuList = [
   { name: "Home", href: "/" },
@@ -91,7 +91,7 @@ function NavbarFixed() {
       </ul>
 
       <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        <ModeToggle />
+        <GithubBtn />
       </div>
     </nav>
   );
@@ -146,7 +146,7 @@ function NavbarScroll({ isScrolling }: NavbarScrollProps) {
           </li>
         ))}
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-          <ModeToggle />
+          <GithubBtn />
         </div>
       </ul>
     </motion.nav>

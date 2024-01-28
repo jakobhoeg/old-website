@@ -1,9 +1,10 @@
 "use client";
-import React, { ReactElement, useRef, useState } from "react";
+import React, { ReactElement, useEffect, useRef, useState } from "react";
 import { Button } from "./ui/button";
-import { ExternalLinkIcon } from "@radix-ui/react-icons";
+import { ExternalLinkIcon, GitHubLogoIcon, StarFilledIcon, StarIcon } from "@radix-ui/react-icons";
 import { useHover } from "@/lib/hover-context";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 interface CardType {
   id: number;
@@ -15,6 +16,7 @@ interface CardType {
   videoAlt?: string;
   showcaseUrl?: string;
   skills?: string[];
+  github?: string;
 }
 
 export default function MyProjects() {
@@ -49,13 +51,16 @@ export default function MyProjects() {
     setDragStart(null);
   };
 
+  const theme = useTheme();
+
   return (
-    <section className=" w-full h-full flex justify-center overflow-hidden ">
+    <section className="relative w-full h-full flex justify-center overflow-hidden ">
       <div className="flex flex-col w-full items-center  ">
         <div className="text-center w-full space-y-1 md:space-y-4  px-2">
           <h1 className="text-4xl md:text-6xl font-bold max-w-prose">
             Projects I&apos;ve worked on
           </h1>
+
           <p className="md:text-2xl prose text-zinc-400">
             Some of the projects I&apos;ve worked on, I am more proud of than
             others. These will be showcased here.
@@ -81,13 +86,25 @@ export default function MyProjects() {
 export function Card() {
   const { setHovered } = useHover();
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter: React.MouseEventHandler<HTMLButtonElement> = () => {
     setHovered(true);
   };
 
   const handleMouseLeave = () => {
     setHovered(false);
   };
+
+  const fetchGithubStars = async () => {
+    const response = await fetch(
+      "https://api.github.com/repos/jakobhoeg/shadcn-chat"
+    );
+    const data = await response.json();
+    console.log(data.stargazers_count);
+  }
+
+  useEffect(() => {
+    fetchGithubStars();
+  }, []);
 
 
   const cards: CardType[] = [
@@ -114,23 +131,25 @@ export function Card() {
     },
     {
       id: 3,
-      title: "Moodle Bot",
+      title: "shadcn-chat",
       description:
-        "A Node.js automation bot that downloads all files from all your Moodle courses.",
+        "Open source chat components for NextJS.",
       videoSrc:
-        "https://utfs.io/f/beff1b02-f993-4d91-8f2d-d3559d97bd15-ngm1nx.mp4",
+        "https://utfs.io/f/3c7ba35d-d065-4e10-ac80-54bb7bd1f6bb-62d9he.MP4",
       videoAlt: "Moodle Lazy DL Bot",
-      showcaseUrl: "https://github.com/jakobhoeg/moodle-lazy-dl",
-      skills: ["/nodedotjs.svg", "/playwright.svg"],
+      showcaseUrl: "https://shadcn-chat.vercel.app/",
+      github: "https://github.com/jakobhoeg/shadcn-chat",
+      skills: ["/nextdotjs.svg", "typescript.svg", "/tailwindcss.svg"],
     },
   ];
+
 
   return (
     <div className="flex gap-5 w-full">
       {cards.map((card) => (
         <div
           key={card.id}
-          className=" flex flex-col items-center border rounded-lg p-8 w-11/12 md:w-auto flex-shrink-0 snap-center sm:snap-none"
+          className="box flex flex-col items-center border rounded-lg p-8 w-11/12 md:w-auto flex-shrink-0 snap-center sm:snap-none"
         >
           <video
             autoPlay = {false}
@@ -156,9 +175,10 @@ export function Card() {
                     </div>
                   )}
                 </div>
+                <div className="space-x-2">
                 {card.showcaseUrl && (
                   <Button
-                  key={card.id}
+                  key={card.showcaseUrl}
                   onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                     className="rounded-full"
@@ -168,6 +188,20 @@ export function Card() {
                     <ExternalLinkIcon className="w-4 h-4" />
                   </Button>
                 )}
+                {card.github && (
+                  <Button
+                  key={card.github}
+                  onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    className="rounded-full relative"
+                    variant="outline"
+                    onClick={() => window.open(card.github, "_blank")}
+                  >
+                    <GitHubLogoIcon className="w-4 h-4" />
+                    <span className="sr-only">Github link</span>
+                  </Button>
+                )}
+                </div>
               </div>
             </div>
             <p className="pt-2 md:w-96 lg:w-[450px] text-muted-foreground">

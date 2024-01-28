@@ -6,6 +6,7 @@ import debounce from "lodash/debounce";
 import { useHover } from "@/lib/hover-context";
 import { AnimatePresence, motion, useSpring } from "framer-motion";
 import Image from "next/image";
+import ButtonRotatingBackgroundGradient from "./ui/button-rotating-bg-gradient";
 
 export default function Hero() {
   const [showArrowButton, setShowArrowButton] = useState(true);
@@ -109,7 +110,9 @@ export default function Hero() {
   };
 
   return (
-    <section className="w-full overflow-hidden ">
+    <section className="w-full overflow-hidden  ">
+      <div className="absolute hidden dark:sm:flex top-0 z-[-2] h-screen w-full  bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.20),rgba(255,255,255,0))]" ></div>
+      <div className="absolute hidden dark:hidden sm:flex top-0 z-[-2] h-screen w-full bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,90,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
       <AnimatePresence>
       {isHovered && (
           <motion.div
@@ -160,21 +163,21 @@ export default function Hero() {
             }}
             className=" text-center text-5xl lg:text-7xl max-w-5xl prose font-bold"
           >
-            Software developer with a passion for design
+            Software <span className="bg-gradient-to-t from-[#c7d2fe] to-[#8678f9] bg-clip-text text-transparent">developer</span> with a <span className="bg-gradient-to-t from-[#c7d2fe] to-[#8678f9] bg-clip-text text-transparent">passion</span> for design
           </motion.h1>
 
           <motion.h2
             variants={itemVariants}
             className="text-center text-lg md:text-2xl text-muted-foreground"
           >
-            Trying to create cool stuff since 1995.
+            Trying to create cool stuff since 1995*
           </motion.h2>
           <motion.div variants={itemVariants}>
             <Button
               size="lg"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className="rounded-full gap-2"
+              className="rounded-full gap-2 lightbg-btn dark:hidden"
               onClick={() =>
                 document.getElementById("contact")?.scrollIntoView()
               }
@@ -182,6 +185,29 @@ export default function Hero() {
               <p>Get in touch</p>
               <RocketIcon className="w-4 h-4" />
             </Button>
+            <Button
+              size="lg"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="rounded-full gap-2 hidden dark:flex darkbg-btn"
+              onClick={() =>
+                document.getElementById("contact")?.scrollIntoView()
+              }
+            >
+              <p>Get in touch</p>
+              <RocketIcon className="w-4 h-4" />
+            </Button>
+            {/* <ButtonRotatingBackgroundGradient
+            text="Get in touch"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={() =>
+              document.getElementById("contact")?.scrollIntoView()
+            }
+            icon={<RocketIcon />}
+            >
+              
+            </ButtonRotatingBackgroundGradient> */}
           </motion.div>
           {showArrowButton && (
             <motion.div
