@@ -94,19 +94,6 @@ export function Card() {
     setHovered(false);
   };
 
-  const fetchGithubStars = async () => {
-    const response = await fetch(
-      "https://api.github.com/repos/jakobhoeg/shadcn-chat"
-    );
-    const data = await response.json();
-    console.log(data.stargazers_count);
-  }
-
-  useEffect(() => {
-    fetchGithubStars();
-  }, []);
-
-
   const cards: CardType[] = [
     {
       id: 1,

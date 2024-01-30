@@ -28,27 +28,12 @@ export default function Skills() {
     };
   }, []);
 
-  const handleMouseMove = (e: any) => {
-    if (!isMobile) {
-      mouseX.set(e.pageX);
-    }
-  };
 
-  const handleMouseLeave = () => {
-    if (!isMobile) {
-      mouseX.set(Infinity);
-    }
-  };
 
   return (
     <motion.div className="w-full relative">
       <motion.div className="flex flex-col items-center space-y-8">
-        <p className="text-lg text-zinc-400">
-          Technologies I enjoy working with:
-        </p>
         <motion.div
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
           id="light-theme"
           className="dark:hidden mx-auto flex flex-wrap justify-center items-end gap-x-12 lg:gap-x-20  gap-y-4 rounded-2xl px-4 pb-3"
         >
@@ -61,18 +46,18 @@ export default function Skills() {
           <SkillsIcon mouseX={mouseX} imageSrc="/docker-color.svg" />
         </motion.div>
         <motion.div
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
           id="dark-theme"
-          className="hidden mx-auto dark:flex flex-wrap justify-center items-end gap-x-12 lg:gap-x-20 gap-y-4 rounded-2xl px-4 pb-3"
+          className="hidden mx-auto dark:flex flex-wrap justify-center items-end gap-x-12 lg:gap-x-28 gap-y-4 rounded-2xl px-4 pb-3"
         >
           <SkillsIcon mouseX={mouseX} imageSrc="/dotnet.svg" />
           <SkillsIcon mouseX={mouseX} imageSrc="/react.svg" />
           <SkillsIcon mouseX={mouseX} imageSrc="/typescript.svg" />
-          <SkillsIcon mouseX={mouseX} imageSrc="/javascript.svg" />
           <SkillsIcon mouseX={mouseX} imageSrc="/css3.svg" />
-          <SkillsIcon mouseX={mouseX} imageSrc="/html5.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/tailwindcss.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/jenkins.svg" />
           <SkillsIcon mouseX={mouseX} imageSrc="/docker.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/nextdotjs.svg" />
+          <SkillsIcon mouseX={mouseX} imageSrc="/amazonaws.svg" />
         </motion.div>
       </motion.div>
     </motion.div>

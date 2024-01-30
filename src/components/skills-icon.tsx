@@ -18,7 +18,7 @@ export default function SkillsIcon({ imageSrc, mouseX }: Props) {
     return val - bounds.x - bounds.width / 2;
   });
 
-  let widthSync = useTransform(distance, [-140, 0, 140], [50, 100, 50]);
+  let widthSync = useTransform(distance, [-140, 0, 140], [55, 100, 55]);
   let width = useSpring(widthSync, { mass: 0.1, stiffness: 140, damping: 12 });
 
   const handleMouseEnter = () => {
@@ -43,7 +43,7 @@ export default function SkillsIcon({ imageSrc, mouseX }: Props) {
         src={imageSrc}
         width={60}
         height={60}
-        className="shake shake:hover dark:invert w-16 h-16 "
+        className="shake shake:hover dark:invert w-24 h-24 "
       ></Image>
     </motion.div>
   );
