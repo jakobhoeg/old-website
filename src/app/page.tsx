@@ -18,7 +18,7 @@ export default function Home() {
       </div>
       <div className="h-[50vh] flex flex-col items-center ">
       <p className="text-lg text-zinc-400">
-          Technologies I enjoy working with:
+          Technologies I enjoy working with
         </p>
       <InfiniteLooper speed={50} direction="left">
         <Skills />
