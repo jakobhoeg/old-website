@@ -20,7 +20,7 @@ export default function Home() {
       <p className="text-lg text-zinc-400">
           Technologies I enjoy working with
         </p>
-      <InfiniteLooper speed={50} direction="left">
+      <InfiniteLooper speed={40} direction="left">
         <Skills />
       </InfiniteLooper>
       </div>

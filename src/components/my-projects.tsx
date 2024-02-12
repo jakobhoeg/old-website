@@ -108,6 +108,29 @@ export function Card() {
     },
     {
       id: 2,
+      title: "shadcn-chat",
+      description:
+        "Open source chat components for NextJS. Built on top of the very popular UI library, shadcn.",
+      videoSrc:
+        "https://utfs.io/f/3c7ba35d-d065-4e10-ac80-54bb7bd1f6bb-62d9he.MP4",
+      videoAlt: "Moodle Lazy DL Bot",
+      showcaseUrl: "https://shadcn-chat.vercel.app/",
+      github: "https://github.com/jakobhoeg/shadcn-chat",
+      skills: ["/nextdotjs.svg", "typescript.svg", "/tailwindcss.svg"],
+    },
+    {
+      id: 3,
+      title: "Web UI for Ollama LLMs",
+      description:
+        "Open source web interface for Ollama. Run open-source large language models (LLMs) locally on your pc. The web interface is coded in NextJS with TypeScript.",
+      videoSrc:
+        "https://utfs.io/f/afb47c2a-6f2d-4b45-8e16-d9cd484b3221-grr6xm.MP4",
+      videoAlt: "Web UI for Ollama LLMs",
+      github: "https://github.com/jakobhoeg/shadcn-chat",
+      skills: ["/nextdotjs.svg", "typescript.svg", "/tailwindcss.svg"],
+    },
+    {
+      id: 4,
       title: "Unity Game",
       description:
         "A 2D rougelike, bullet hell top-down game created in Unity Game Engine, coded in C# and designed by me. (Still a WIP).",
@@ -115,18 +138,6 @@ export function Card() {
         "https://utfs.io/f/343d1d89-90b6-440c-93b9-863ad9e32d9e-56ywvu.mp4",
       videoAlt: "Unity Game",
       skills: ["/unity.svg", "/csharp.svg", "/aseprite.svg"],
-    },
-    {
-      id: 3,
-      title: "shadcn-chat",
-      description:
-        "Open source chat components for NextJS.",
-      videoSrc:
-        "https://utfs.io/f/3c7ba35d-d065-4e10-ac80-54bb7bd1f6bb-62d9he.MP4",
-      videoAlt: "Moodle Lazy DL Bot",
-      showcaseUrl: "https://shadcn-chat.vercel.app/",
-      github: "https://github.com/jakobhoeg/shadcn-chat",
-      skills: ["/nextdotjs.svg", "typescript.svg", "/tailwindcss.svg"],
     },
   ];
 

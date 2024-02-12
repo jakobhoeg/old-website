@@ -50,7 +50,7 @@ export default function InfiniteLooper({
     
   
     return (
-      <div className="looper flex justify-end" ref={outerRef}>
+      <div className="looper flex justify-end [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]" ref={outerRef}>
         <div className="looper__innerList" ref={innerRef}>
           
             <div
