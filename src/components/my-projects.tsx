@@ -126,7 +126,7 @@ export function Card() {
       videoSrc:
         "https://utfs.io/f/afb47c2a-6f2d-4b45-8e16-d9cd484b3221-grr6xm.MP4",
       videoAlt: "Web UI for Ollama LLMs",
-      github: "https://github.com/jakobhoeg/shadcn-chat",
+      github: "https://github.com/jakobhoeg/nextjs-ollama-llm-ui",
       skills: ["/nextdotjs.svg", "typescript.svg", "/tailwindcss.svg"],
     },
     {
