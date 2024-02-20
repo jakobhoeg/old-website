@@ -27,18 +27,7 @@ export default function Contact() {
         </h1>
         <div className="px-2">
           <p className="md:text-2xl prose text-zinc-400">
-            If you want to contact me you can send me an{" "}
-            <a href="mailto:jakobfsd@hotmail.dk">
-              <strong
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className="underline"
-              >
-                email
-              </strong>
-              , or get in touch with me here:
-
-            </a>
+            If you want to contact me you can get in touch with me here:
           </p>
           
         </div>
@@ -57,13 +46,6 @@ export default function Contact() {
             onMouseLeave={handleMouseLeave}
             className=" w-6 h-6 text-muted-foreground"
           />
-            <a href="mailto:jakobfsd@hotmail.dk">
-            <SiMaildotru
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-              className=" w-6 h-6 text-muted-foreground"
-            />
-            </a>
         </div>
       </div>
     </div>
