@@ -163,7 +163,7 @@ export default function Hero() {
             }}
             className=" text-center text-5xl lg:text-7xl max-w-5xl prose font-bold"
           >
-            Software <span className="bg-gradient-to-t from-[#c7d2fe] to-[#8678f9] bg-clip-text text-transparent">developer</span> with a <span className="bg-gradient-to-t from-[#c7d2fe] to-[#8678f9] bg-clip-text text-transparent">passion</span> for design
+            Software <span className="bg-gradient-to-t from-[#c7d2fe] to-[#8678f9] bg-clip-text text-transparent">developer</span> with a <span className="bg-gradient-to-t from-[#c7d2fe] to-[#8678f9] bg-clip-text text-transparent">passion</span> for innovation
           </motion.h1>
 
           <motion.h2
