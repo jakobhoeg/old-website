@@ -120,7 +120,7 @@ export function Card() {
     },
     {
       id: 3,
-      title: "Web UI for Ollama LLMs",
+      title: "Web app for Ollama LLMs",
       description:
         "Open source web interface for Ollama. Run open-source large language models (LLMs) locally on your pc. The web interface is coded in NextJS with TypeScript.",
       videoSrc:
